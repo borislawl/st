@@ -5,15 +5,16 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-static int borderpx = 2;
+static char *font = "Hurmit Nerd Font:size=9.8:autohint=true:antialias=true"; 
+
+static int borderpx = 12;
 
 /*
  * background image
  * expects farbfeld format
  * pseudo transparency fixes coordinates to the screen origin
  */
-static const char *bgfile = "~/st.ff";
+static const char *bgfile = "/opt/wpp/st_background.ff";
 static const int pseudotransparency = 1;
 
 /*
@@ -82,7 +83,7 @@ static unsigned int cursorthickness = 2;
 static int bellvolume = 0;
 
 /* default TERM value */
-char *termname = "st-256color";
+char *termname = "xterm-256color";
 
 /*
  * spaces per tab
@@ -103,44 +104,40 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
 
-	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+  /* 8 normal colors */
+  [0] = "#000000", /* black   */
+  [1] = "#ff0000", /* red     */
+  [2] = "#33ff00", /* green   */
+  [3] = "#ff8c00", /* yellow  */
+  [4] = "#0066ff", /* blue    */
+  [5] = "#cc00ff", /* magenta */
+  [6] = "#00ffff", /* cyan    */
+  [7] = "#d0d0d0", /* white   */
 
-	[255] = 0,
+  /* 8 bright colors */
+  [8]  = "#808080", /* black   */
+  [9]  = "#ff0000", /* red     */
+  [10] = "#33ff00", /* green   */
+  [11] = "#ff8c00", /* yellow  */
+  [12] = "#0066ff", /* blue    */
+  [13] = "#cc00ff", /* magenta */
+  [14] = "#00ffff", /* cyan    */
+  [15] = "#ffffff", /* white   */
 
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-	"gray90", /* default foreground colour */
-	"black", /* default background colour */
+  /* special colors */
+    [256] = "#000000", // background gray 
+    [257] = "#bebebe", /* foreground */
 };
-
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 258;
-unsigned int defaultbg = 259;
-unsigned int defaultcs = 256;
-static unsigned int defaultrcs = 257;
+unsigned int defaultfg = 257;
+unsigned int defaultbg = 256;
+unsigned int defaultcs = 15;
+static unsigned int defaultrcs = 15;
 
 /*
  * https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h4-Functions-using-CSI-_-ordered-by-the-final-character-lparen-s-rparen:CSI-Ps-SP-q.1D81
