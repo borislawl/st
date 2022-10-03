@@ -14,8 +14,12 @@ static int borderpx = 12;
  * expects farbfeld format
  * pseudo transparency fixes coordinates to the screen origin
  */
-static const char *bgfile = "/opt/wpp/st_background.ff";
-static const int pseudotransparency = 1;
+
+/*
+ * background image
+ * expects farbfeld format
+ * pseudo transparency fixes coordinates to the screen origin
+ */
 
 /*
  * What program is execed by st depends of these precedence rules:
