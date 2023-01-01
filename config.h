@@ -5,7 +5,13 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hurmit Nerd Font:size=9.8:autohint=true:antialias=true"; 
+static char *font = "Spleen 6x12:size=9"; 
+
+static char *font2[] = {
+        "Hurmit Nerd Font:size=9.8:autohint=true:antialias=true"
+/*     "Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
+/*     "Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
+};
 
 static int borderpx = 12;
 
